@@ -1,0 +1,106 @@
+@media screen and (max-width: 450px) {
+  .hero {
+      min-height: 300px;
+      background: url('/images/hero-image_2-small.jpg');
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .hero {
+    min-width: 1000px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .hero {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .nav-list {
+    z-index: 10;
+    width: 90%;
+    background-color: #fff;
+    position: absolute;
+    padding: 0 2%;
+
+    /* This trasform moves the drawer off canvas. */
+    transform: translate(500px, 0);
+
+    /* Optionally, we animate the drawer. */
+    transition: transform 0.3s ease;
+  }
+
+  .open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+
+  .nav-item {
+    display: list-item;
+    border-bottom: 1px solid #e0e0e0;
+    width: 100%;
+    text-align: left;
+  }
+
+  #hamburger {
+    text-decoration: none;
+    color: var(--primary);
+    font-size: 50px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .header-menu {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .post-content {
+    padding: 16px 32px 32px 32px;
+  }
+
+  .post-title {
+    font-size: 18px;
+  }
+
+  .post-description {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .restaurant-posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 16px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .restaurant-posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact {
+    padding-top: 1rem;
+  }
+
+  .contact .container {
+    flex-direction: column;
+  }
+
+  .contact .container .contact-info {
+    width: 100%;
+  }
+
+  .contact .container .contact-form {
+    width: 100%;
+  }
+}

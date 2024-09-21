@@ -1,0 +1,405 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Buhid&display=swap");
+
+:root {
+  --primary: brown;
+  --bg: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans Buhid", sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg);
+}
+
+.skip {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: #bf1722;
+  color: white;
+  padding: 8px;
+  z-index: 99999;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.skip:focus {
+  top: 0;
+}
+
+/* Bagian Navbar */
+
+.navbar-container {
+  padding: 0 5%;
+  width: 100%;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.7);
+  border-bottom: var(--primary) 1px solid;
+  position: fixed;
+}
+
+.navbar-container .logo {
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+.navbar-container .logo h1 a {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.navbar-container .nav-list ul {
+  padding-left: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-container .nav-list li {
+  list-style-type: none;
+}
+
+.navbar-container .nav-list li a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: var(--primary);
+  padding-left: 1rem;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.navbar-container .nav-list li a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.2rem;
+  border-bottom: var(--primary) 0.1rem solid;
+  transform: scaleX(0);
+  transition: 0.3s linear;
+}
+
+.navbar-container .nav-list li a:hover::after {
+  transform: scaleX(0.5);
+}
+
+/* Bagian Hero */
+
+.hero {
+  min-height: 100vh;
+  background: url('/images/hero-image_2-large.jpg') no-repeat center fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+main {
+  max-width: 1200px;
+  width: 100%;
+  margin-inline: auto;
+  padding: 4rem 7%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+main .hero-content {
+  margin: 0 15%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  color: var(--primary);
+}
+
+main .hero-content .description {
+  padding: 2%;
+  flex: 1 1;
+  text-align: center;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+
+main .hero-content .description .title {
+  font-size: 2rem;
+  margin-block: 1rem;
+}
+
+main .hero-content .description p {
+  line-height: 1.7rem;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+main .hero-content .description button {
+  padding: 0.8rem 2.5rem;
+  margin-block-start: 1rem;
+  font-weight: 700;
+  font-size: 1.3rem;
+  font-family: "Noto Sans Buhid", sans-serif;
+  color: white;
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background-color: var(--primary);
+  cursor: pointer;
+  transition: all 0.15s ease-in;
+}
+
+main .hero-content .description button:hover {
+  border: 3px solid var(--primary);
+  color: var(--primary);
+  background-color: transparent;
+}
+
+/* Bagian Post */
+
+.main-content h1 {
+  margin-top: 8%;
+  font-size: 2.3rem;
+  text-align: center;
+}
+
+.content {
+  padding: 32px;
+}
+
+#content-heading {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 4rem;
+}
+
+.latest {
+  width: 100%;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.restaurant-posts {
+  margin: 5%;
+  text-align: left;
+  display: grid;
+  grid-row-gap: 16px;
+}
+
+.post-item {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 5%;
+}
+
+.post-item a:link {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.post-content {
+  padding: 16px;
+}
+
+.post-content h2 {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.post-thumbnail {
+  width: 100%;
+}
+
+.post-title {
+  font-weight: bold;
+  margin-top: 16px;
+  transition: 0.3s opacity;
+}
+
+.post-title:hover {
+  opacity: 0.5;
+}
+
+.post-title a {
+  font-size: 2.05rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-description {
+  margin-top: 16px;
+  font-size: 1rem;
+  line-height: 1.5em;
+  text-align: justify;
+}
+
+/* Bagian Detail */
+
+#main-container h1 {
+  font-size: 2.3rem;
+  margin-bottom: 4rem;
+}
+
+.menu-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  font-size: 1.1rem;
+}
+
+.menu-container h2 {
+  font-size: 2.1rem;
+}
+
+.menu-section {
+  padding: 0 7%;
+}
+
+.detail-reviews {
+  padding: 6% 1rem;
+}
+
+.detail-reviews h2 {
+  text-align: center;
+  font-size: 2.1rem;
+}
+
+/* Bagian Like */
+
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db0000;
+  
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+  
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Bagian Contact */
+
+.contact {
+  padding: 0 7%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: var(--primary);
+}
+
+.contact .content {
+  margin-bottom: 2rem;
+  max-width: 800px;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 1.7rem;
+  text-decoration: underline brown 5px;
+}
+
+.contact .container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact .container .contact-info {
+  width: 50%;
+}
+
+.contact .container .contact-info .box {
+  display: flex;
+}
+
+.contact .container .contact-form {
+  width: 40%;
+  background-color: white;
+  padding: 3rem;
+}
+
+.contact .container .contact-info .box .icon {
+  margin: 25px;
+  min-width: 60px;
+  height: 60px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: var(--primary) 1.5px solid;
+  font-size: 22px;
+}
+
+.contact .container .contact-info .box .text p {
+  max-width: 17rem;
+}
+
+.contact .container .contact-form .input-box {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.contact .container .contact-form .input-box input,
+.contact .container .contact-form .input-box textarea {
+  width: 100%;
+  padding: 5px 0;
+  font-size: 1.8rem;
+  margin: 10px 0;
+  border: none;
+  border-bottom: #333 2px solid;
+  outline: none;
+  resize: none;
+}
+
+.contact .container .contact-form .input-box button[type="submit"] {
+  width: 6rem;
+  background: var(--primary);
+  color: white;
+  border-radius: 15%;
+  border: 2px solid var(--primary);
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.contact .container .contact-form .input-box button[type="submit"]:hover {
+  color: var(--primary);
+  background-color: transparent;
+}
+
+/* Bagian Footer */
+
+footer {
+  background-color: var(--primary);
+  padding: 2em;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
